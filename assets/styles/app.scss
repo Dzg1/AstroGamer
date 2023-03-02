@@ -31,22 +31,24 @@ a{
     box-sizing: border-box;
 }
 
+/*** ***/
 
+/*** Background ***/
 
 html {
     min-height: 100%;
-    /* Look, it's not fixed anymore! */
-
     display: flex;
     flex-direction: column;
 }
 
 body {
     flex-grow: 1;
-
     min-height: 100vh;
     background: radial-gradient(66.5% 221.21% at 136.03% -61.44%, rgba(161, 155, 217, .4) 0%, rgba(161, 155, 217, 0) 92.09%), radial-gradient(93.54% 126.91% at 29.15% -56.29%, rgb(254, 72, 3) 0%, rgba(233, 69, 96, 0) 92.09%), radial-gradient(86.19% 101.84% at -17.13% -24.8%, rgb(47, 110, 252) 0%, rgba(0, 162, 254, 0) 92.09%), #423E3E;
 }
+/*** ***/
+
+/*** NavBar ***/
 
 .navbar {
     background: linear-gradient(180deg, rgba(66, 62, 62, 0.634) 0%, rgba(66, 62, 62, 0) 100%);
@@ -55,7 +57,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding :0 50px;
-
 }
 
 .nav-title img {
@@ -79,6 +80,7 @@ padding: 0 15px;
     font-family: var(--font1);
     font-weight: 800;
 }
+/*** animation astro boy ***/
 
 @keyframes float {
 	0% {
@@ -91,4 +93,62 @@ padding: 0 15px;
 		transform: translatey(-5px);
 	}
 }
-  
+/*** ***/
+
+/*** navigation bottom ***/
+.contain-nav {
+    width: 50%;
+    background: blue;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list a{
+    position: relative;
+    font-family: var(--font2);
+    font-size: 2rem;
+    font-weight: 300;
+    color: black;
+    letter-spacing: 3px;
+    display: flex;justify-content: center;align-items: center;
+    flex-direction: column  ;
+    text-align: center;
+    width: 100%;
+}
+.nav img {
+    height: 30px;
+}
+
+.nav{
+    position: relative;
+    width: 350px;
+    height: 70px;
+    background: #a4a4a4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav ul {
+    display: flex;
+    width: 280px;
+}
+
+.nav ul li {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    list-style: none;
+}
+
+.nav .icon{
+    position: relative;
+    display: block; 
+    line-height: 75px;
+    text-align: center;
+    transition: 0.5s;
+}
+/*** ***/

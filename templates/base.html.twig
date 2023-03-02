@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-AstroGamer
+			AstroGamer
 		</title>
 		<link
 		rel="icon" href="{{ asset('images/logo/ag.png')}}">
@@ -19,8 +19,42 @@ AstroGamer
 	<body>
 		<nav class="navbar">
 			<div class="nav-title"><img src="{{ asset('images/navbar/AstroGamer.png')}}" alt="Logo astro gamer"></div>
-			<div class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer"><a>Login</a></div>
+			<div class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer"><a>Login</a>
+			</div>
 		</nav>
 		{% block body %}{% endblock %}
+		<div class="container-nav-bottom">
+			<div class="contain-nav">
+				<div class="nav">
+					<ul>
+						<li class="nav-list">
+							<a href="">
+							<span class="icon"><img src="{{ asset('images/icon/home.png')}}" alt="icone d'acceuil"></span>
+							<span class="text">Acceuil</span>
+							</a>
+						</li>
+						<li class="nav-list">
+							<a href="">
+							<span class="icon"><img src="{{ asset('images/icon/setting.png')}}" alt="icone de reglages"></span>
+							<span class="text">Règlage</span>
+							</a>
+						</li>
+						<li class="nav-list">
+							<a href="">
+							<span class="icon"><img src="{{ asset('images/icon/user.png')}}" alt="icone de compte"></span>
+							<span class="text">Mon compte</span>
+							</a>
+						</li>
+						<li class="nav-list">
+							<a href="">
+							<span class="icon"><img src="{{ asset('images/icon/contact.png')}}" alt="icone de contact"></span>
+							<span class="text">Contacte</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="contain-contact"></div>
+		</div>
 	</body>
 </html>
