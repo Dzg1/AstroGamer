@@ -98,7 +98,7 @@ padding: 0 15px;
 /*** navigation bottom ***/
 .contain-nav {
     width: 50%;
-    background: blue;
+    background: orange;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -108,7 +108,7 @@ padding: 0 15px;
 .nav-list a{
     position: relative;
     font-family: var(--font2);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: black;
     letter-spacing: 3px;
@@ -144,11 +144,35 @@ padding: 0 15px;
     list-style: none;
 }
 
-.nav .icon{
+a .icon{
     position: relative;
     display: block; 
     line-height: 75px;
     text-align: center;
     transition: 0.5s;
+}
+
+.nav ul li.active a .icon{
+    transform: translateY(-35px);
+}
+
+.nav ul li a .text{
+    position: absolute;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.nav ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    background: linear-gradient(158deg, var(--color2) 48%, var(--color1) 100%);
 }
 /*** ***/
