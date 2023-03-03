@@ -170,9 +170,11 @@ a .icon{
 
 .indicator{
     position: absolute;
+    top: -50%;
     height: 70px;
     width: 70px;
     border-radius: 50px;
-    background: linear-gradient(158deg, var(--color2) 48%, var(--color1) 100%);
+    background: var(--color2);
+    border: 6px solid orange;
 }
 /*** ***/
