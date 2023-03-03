@@ -11,3 +11,16 @@ import './styles/app.scss';
 // start the Stimulus application
 // import './bootstrap';
 // import 'bootstrap/dist/js/bootstrap';
+ 
+
+/***animation navigationBubble ***/
+
+let list = document.querySelectorAll(".list");
+
+function activeBubble(){
+    list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+}
+list.forEach((item) =>
+item.addEventListener('click',activeBubble));

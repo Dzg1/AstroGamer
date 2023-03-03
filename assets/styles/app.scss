@@ -173,8 +173,33 @@ a .icon{
     top: -50%;
     height: 70px;
     width: 70px;
-    border-radius: 50px;
+    border-radius: 50%;
     background: var(--color2);
     border: 6px solid orange;
+    transition: 0.5s;
 }
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -22.5px;
+    background: #a4a4a4;
+    border-top-right-radius: 20px;
+    box-shadow:0 -10px 0 0 orange;
+}
+.indicator::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: -22.5px;
+    background: #a4a4a4;
+    border-top-left-radius: 20px;
+    box-shadow:0 -10px 0 0 orange;
+}
+
 /*** ***/
