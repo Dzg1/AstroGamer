@@ -29,6 +29,7 @@ a{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 /*** ***/
@@ -37,11 +38,13 @@ a{
 
 html {
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
+
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
     min-height: 100vh;
     background: radial-gradient(66.5% 221.21% at 136.03% -61.44%, rgba(161, 155, 217, .4) 0%, rgba(161, 155, 217, 0) 92.09%), radial-gradient(93.54% 126.91% at 29.15% -56.29%, rgb(254, 72, 3) 0%, rgba(233, 69, 96, 0) 92.09%), radial-gradient(86.19% 101.84% at -17.13% -24.8%, rgb(47, 110, 252) 0%, rgba(0, 162, 254, 0) 92.09%), #423E3E;
@@ -94,11 +97,16 @@ padding: 0 15px;
 	}
 }
 /*** ***/
-
+                                /***FOOTER***/
 /*** navigation bottom ***/
+.container-nav-bottom {
+    margin-top: auto;
+    height: 150px;
+    display: flex;
+
+    }
 .contain-nav {
     width: 50%;
-    background: orange;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -141,7 +149,7 @@ padding: 0 15px;
     width: 70px;
     height: 70px;
     z-index: 1;
-    list-style: none;
+
 }
 
 a .icon{
@@ -175,7 +183,7 @@ a .icon{
     width: 70px;
     border-radius: 50%;
     background: var(--color2);
-    border: 6px solid orange;
+    border: 6px solid var(--color3);
     transition: 0.5s;
 }
 
@@ -188,7 +196,7 @@ a .icon{
     left: -22.5px;
     background: #a4a4a4;
     border-top-right-radius: 20px;
-    box-shadow:0 -10px 0 0 orange;
+    box-shadow:0 -10px 0 0 var(--color3);
 }
 .indicator::after{
     content: '';
@@ -199,7 +207,61 @@ a .icon{
     right: -22.5px;
     background: #a4a4a4;
     border-top-left-radius: 20px;
-    box-shadow:0 -10px 0 0 orange;
+    box-shadow:0 -10px 0 0 var(--color3);
+}
+.nav ul li:nth-child(1).active ~ .indicator{
+transform: translateX(calc(70px * 0));
+}
+.nav ul li:nth-child(2).active ~ .indicator{
+transform: translateX(calc(70px * 1));
+}
+.nav ul li:nth-child(3).active ~ .indicator{
+transform: translateX(calc(70px * 2));
+}
+.nav ul li:nth-child(4).active ~ .indicator{
+transform: translateX(calc(70px * 3));
 }
 
+/*** ***/
+
+/*** contact ***/
+ .contain-contact
+{
+background: orange;
+width: 50%;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.contact{
+    background: #15FBFC;
+    width: 350px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact ul li img{
+    height: 40px;
+    width: 40px;
+    animation: float 8s ease-in-out infinite;
+}
+.contact ul li:nth-child(2) img {
+    animation-delay: 2s;
+}
+
+.contact ul li:nth-child(3) img {
+    animation-delay: 4s;
+}
+
+.contact ul li:nth-child(4) img {
+    animation-delay: 6s;
+}
 /*** ***/

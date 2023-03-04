@@ -15,12 +15,15 @@ import './styles/app.scss';
 
 /***animation navigationBubble ***/
 
-let list = document.querySelectorAll(".list");
+let list = document.querySelectorAll(".nav-list");
 
-function activeBubble(){
-    list.forEach((item) =>
-        item.classList.remove('active'));
-        this.classList.add('active');
+function activeBubble(event){
+    list.forEach(function (item) {
+        event.preventDefault();
+        item.classList.remove('active');
+        event.currentTarget.classList.add('active');
+    })
 }
-list.forEach((item) =>
-item.addEventListener('click',activeBubble));
+list.forEach((item) => {
+    item.addEventListener('click',activeBubble);
+});
