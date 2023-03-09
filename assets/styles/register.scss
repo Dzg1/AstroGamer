@@ -1,0 +1,71 @@
+.container-register {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-register {
+    width: 40%;
+    background: rgba(201, 201, 201, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px;
+}
+
+
+h1 {
+    font-size: 50px;
+    margin: 30px 0;
+    font-family: var(--font1);
+    color: rgb(239, 237, 237);
+    text-shadow: 2px 2px 9px black;
+}
+
+.card-register .ul .input,.card-register button {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 8px 0;
+    padding: 0 20px;
+    font-size: 18px;
+    font-family: var(--font3);
+    border-radius: 10px;
+    color: rgb(239, 237, 237);
+    text-shadow: 1px 1px 1px black;
+    
+}
+
+.card-register .ul .input::placeholder{
+    text-shadow: 1px 1px 1px black;
+    color: rgb(239, 237, 237);
+    font-family: var(--font3);
+}
+
+.card-register p {
+    font-size: 20px;
+    margin: 17px 0;
+    color: rgb(239, 237, 237);
+}
+
+.card-register button{
+    background: var(--color2);
+    color: rgb(239, 237, 237);
+    font-size: 22px;
+    cursor: pointer;
+    border: none;
+
+
+}
+
+.card-register p a {
+    color: rgb(239, 237, 237);
+    font-weight: bold;
+    font-size: 22px;
+}
