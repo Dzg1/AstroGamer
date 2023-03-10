@@ -18,8 +18,8 @@
 	</head>
 	<body>
 		<nav class="navbar">
-			<div class="nav-title"><img src="{{ asset('images/navbar/AstroGamer.png')}}" alt="Logo astro gamer"></div>
-			<div href="#" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer"><a href="{{ path('app_login') }}">Login</a>
+			<div href="{{ path('app_home') }}" class="nav-title"><img src="{{ asset('images/navbar/AstroGamer.png')}}" alt="Logo astro gamer"></div>
+			<div href="{{ path('app_login') }}" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer"><a href="{{ path('app_login') }}">Login</a>
 			</div>
 		</nav>
 		{% block body %}{% endblock %}

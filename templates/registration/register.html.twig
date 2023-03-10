@@ -20,13 +20,13 @@
 {% block body %}
 	<div class="container-register">
 		<div class="card-register">
-			<h1>Register</h1>
+			<h1>S'inscrire</h1>
 
 			{{ form_start(registrationForm, {'attr': {'class': 'ul', 'autocomplete': 'off'}}) }}
 			{{ form_row(registrationForm.email, {'label': false, 'attr': {'class': 'input', 'placeholder': 'Email'}}) }}
 			{{ form_row(registrationForm.username, {'label': false, 'attr': {'class': 'input', 'placeholder': 'Pseudo'}}) }}
 			{{ form_row(registrationForm.plainPassword, {'label': false, 'attr': {'class': 'input', 'placeholder': 'mot de passe'}}) }}
-			<button type="submit" class="btn">Register</button>
+			<button type="submit" class="btn"><span>Créer un compte</span></button>
 			<p>Vous avez déjà un compte?
 				<a href="{{ path('app_login') }}">Connectez-vous</a>
 			</p>
@@ -34,3 +34,4 @@
 		</div>
 	</div>
 {% endblock %}
+ 
