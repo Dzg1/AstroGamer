@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
+{% block head %}
+	{{ parent() }}
+	{% block stylesheets %}
+		{{ parent() }}
+		{{ encore_entry_link_tags('app_login') }}
 
-{% block title %}Hello LoginController!
+	{% endblock %}
+	{% block javascripts %}
+		{{ parent() }}
+		{{ encore_entry_script_tags('app_login') }}
+
+	{% endblock %}
+{% endblock %}
+{% block title %}Login
 {% endblock %}
 
 {% block body %}
@@ -9,19 +21,22 @@
 	{% endif %}
 	<div class="container-login">
 		<div class="card-login">
-			<form action="{{ path('app_login') }}" method="post">
-				<label for="username">Email:</label>
-				<input type="text" id="username" name="_username" value="{{ last_username }}">
+			<form class="ul" action="{{ path('app_login') }}" method="post" autocomplete="off" >
+				<label for="username"></label>
+				<input placeholder="E-mail" class="input" type="text" id="username" name="_username" value="{{ last_username }}">
 
-				<label for="password">Password:</label>
+				<label for="password"></label>
 				<input
-				type="password" id="password" name="_password">
+				type="password" id="password" name="_password" class="input" placeholder="Mots de passe">
 
 				{# If you want to control the URL the user is redirected to on success
 				        <input type="hidden" name="_target_path" value="/account"> #}
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-				<button type="submit">login</button>
+				<button class="btn-neon"type="submit"><span>Se connecter</span></button>
+							<p>Vous n'êtes pas inscrit ? 
+				<a href="{{ path('app_register') }}">Créez votre compte.</a>
+			</p>
 			</form>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-.container-register {
+.container-login {
     height: 600px;
     width: 100%;
     display: flex;
@@ -6,8 +6,8 @@
     align-items: center;
 }
 
-.card-register {
-    width: 30%;
+.card-login {
+    width: 20%;
     background: rgba(201, 201, 201, 0.25);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(2px);
@@ -26,7 +26,7 @@ h1 {
 }
 
 
-.card-register .ul .input {
+.card-login .ul .input {
     height: 50px;
     width: 100%;
     border: none;
@@ -43,19 +43,19 @@ h1 {
 
 }
 
-.card-register .ul .input::placeholder {
+.card-login .ul .input::placeholder {
     text-shadow: 1px 1px 1px black;
     color: rgb(239, 237, 237);
     font-family: var(--font3);
 }
 
-.card-register p { 
+.card-login p { 
     font-size: 15px;
     margin: 17px 0;
     color: rgb(239, 237, 237);
 }
 
-.card-register p a {
+.card-login p a {
     color: rgb(239, 237, 237);
     font-weight: bold;
     font-size: 17px;
