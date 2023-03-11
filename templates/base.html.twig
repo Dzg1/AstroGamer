@@ -19,7 +19,22 @@
 	<body>
 		<nav class="navbar">
 			<div href="{{ path('app_home') }}" class="nav-title"><img src="{{ asset('images/navbar/AstroGamer.png')}}" alt="Logo astro gamer"></div>
-			<div href="{{ path('app_login') }}" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer"><a href="{{ path('app_login') }}">Login</a>
+			<div href="{{ path('app_login') }}" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer">
+{% if is_granted('ROLE_USER') %}
+    <!-- Si l'utilisateur a le rôle ROLE_USER -->
+			<a href="{{ path('app_login') }}">ilyès</a>
+{% elseif is_granted('ROLE_ADMIN') %}
+    <!-- Si l'utilisateur a le rôle ROLE_ADMIN -->
+			<a href="{{ path('app_login') }}">Ilyès sherif</a>
+{% else %}
+    <!-- Si l'utilisateur n'est pas authentifié -->
+			<a href="{{ path('app_login') }}">Login</a>
+{% endif %}
+
+
+
+
+
 			</div>
 		</nav>
 		{% block body %}{% endblock %}
