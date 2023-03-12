@@ -22,10 +22,10 @@
 			<div href="{{ path('app_login') }}" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer">
 {% if is_granted('ROLE_USER') %}
     <!-- Si l'utilisateur a le rôle ROLE_USER -->
-			<a href="{{ path('app_login') }}">ilyès</a>
+			<a href="{{ path('app_login') }}">{{ app.user.username }}</a>
 {% elseif is_granted('ROLE_ADMIN') %}
     <!-- Si l'utilisateur a le rôle ROLE_ADMIN -->
-			<a href="{{ path('app_login') }}">Ilyès sherif</a>
+			<a href="{{ path('app_login') }}">{{ app.user.username }} Admin</a>
 {% else %}
     <!-- Si l'utilisateur n'est pas authentifié -->
 			<a href="{{ path('app_login') }}">Login</a>

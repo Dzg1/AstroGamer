@@ -74,7 +74,6 @@ body {
 
 .nav-login {
     height: 70px;
-    width: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,6 +83,7 @@ body {
 .nav-login img {
     height: 40px;
     animation: float 8s ease-in-out infinite;
+    margin:0 20px ;
 }
 
 .nav-login a {
