@@ -47,6 +47,7 @@ html {
 }
 
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -345,7 +346,7 @@ backdrop-filter: blur( 8px );
     letter-spacing: 1px;
     text-decoration: none;
     overflow: hidden;
-    color: #fff;
+    color:  rgb(239, 237, 237);
     font-weight: 400px;
     z-index: 1;
     transition: 0.5s;
@@ -423,3 +424,124 @@ backdrop-filter: blur( 8px );
     box-shadow: 0 0 5px #fb703e, 0 0 15px #fb703e, 0 0 30px #fb703e,
         0 0 60px #fb703e;
 }
+
+
+
+
+/*** user menu ***/
+
+.user-menu{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(67, 67, 67, 0.331);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-user-menu{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-user-menu h2 {
+    font-family: var(--font1);
+    font-size: 40px;
+    color:  rgb(239, 237, 237);
+    text-shadow: 2px 2px 9px black;
+    margin-bottom: 30px;
+}
+
+.container-user-menu .info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container-user-menu .info span{
+text-align: center;
+    font-size: 55px ;
+    font-family: var(--font2);
+letter-spacing: 4px;
+font-weight: 500;
+color:  rgb(239, 237, 237);
+text-shadow: 2px 2px 9px black;
+position: relative;
+}
+
+.container-user-menu .info span::after{
+    content: "";
+    width: 80%;
+    height: 2px;
+    background: rgb(239, 237, 237);
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    border-radius: 50px;
+}
+.container-user-menu .info span:last-child::after{
+    content: none;
+}
+
+.close{
+     position: absolute;
+top: 100px;
+right: 10%;
+font-family: var(--font2);
+font-size:40px;
+letter-spacing: 4px;
+font-weight: 500;
+color:  rgb(239, 237, 237);
+text-shadow: 2px 2px 9px black;
+height: 50px;
+width: 80px;
+display: flex;
+justify-content: center;
+cursor: pointer;
+align-items: center;
+    }
+
+    .close span {
+        transition: .3s ease-in-out;
+    }
+
+    .close::before,
+    .close::after {
+        content: "";
+
+        left: 0px;
+        position: absolute;
+        width: 100%;
+    height: 2px;
+    background: rgb(239, 237, 237);
+        border-radius: 3px;
+        transition: .4s ease-in-out;
+        transform: rotate(0deg);
+    }
+
+    .close::before {
+        top: -5px;
+      }
+      
+      .close::after {
+        bottom: 0px;
+      }
+
+      .close:hover span{
+        transform: scale(0);
+      }
+
+      .close:hover::before {
+        transform: translatey(30px) rotate(45deg)  ;
+        background: red;
+       
+    }
+
+    .close:hover::after {
+        transform:  translatey(-25px) rotate(-45deg);
+        background: red;
+        
+    }
