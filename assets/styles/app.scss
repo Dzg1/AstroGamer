@@ -27,6 +27,7 @@
 
 a {
     text-decoration: none;
+
 }
 
 /***reset css***/
@@ -87,11 +88,11 @@ body {
     margin:0 20px ;
 }
 
-.nav-login a {
+.nav-login a , .nav-login span{
     font-family: var(--font1);
     font-weight: 800;
     color: black;
-
+    cursor: pointer;
 }
 
 /*** animation astro boy ***/
@@ -128,7 +129,7 @@ body {
     align-items: center;
 }
 
-.nav-list a {
+.nav-list .items {
     position: relative;
     font-family: var(--font2);
     font-size: 1.5rem;
@@ -141,6 +142,10 @@ body {
     flex-direction: column;
     text-align: center;
     width: 100%;
+}
+.nav-list .items a {
+    color: black;
+
 }
 
 .nav img {
@@ -172,28 +177,35 @@ backdrop-filter: blur( 8px );
 
 }
 
-a .icon {
+.items .icon {
     position: relative;
     display: block;
     line-height: 75px;
     text-align: center;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-.nav ul li.active a .icon {
+.nav ul li.active .items .icon {
     transform: translateY(-35px);
 }
 
-.nav ul li a .text {
+.nav ul li .items .text {
     position: absolute;
     transition: 0.5s;
     opacity: 0;
     transform: translateY(20px);
+    cursor:default;
+   
 }
 
-.nav ul li.active a .text {
+.nav ul li.active .items .text {
     opacity: 1;
     transform: translateY(10px);
+    cursor: pointer;
+}
+.nav ul li.active .items .text:hover{
+    letter-spacing: 3px;
 }
 
 .indicator {
@@ -325,7 +337,7 @@ backdrop-filter: blur( 8px );
     border-radius: 30px;
     border: none;
     background: transparent;
-
+    cursor: pointer;
 }
 
 .btn-neon span {
@@ -430,25 +442,26 @@ backdrop-filter: blur( 8px );
 
 /*** user menu ***/
 
-.user-menu{
+.menu{
     position: absolute;
     height: 100%;
     width: 100%;
     background: rgba(67, 67, 67, 0.331);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(6px);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
-.container-user-menu{
+
+.container-menu{
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container-user-menu h2 {
+.container-menu h2 {
     font-family: var(--font1);
     font-size: 40px;
     color:  rgb(239, 237, 237);
@@ -456,12 +469,25 @@ backdrop-filter: blur( 8px );
     margin-bottom: 30px;
 }
 
-.container-user-menu .info {
+.container-menu .info {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.container-user-menu .info span{
+
+.container-menu .info a {
+    font-size: 40px;
+    font-family: var(--font2);
+    letter-spacing: 2px;
+    color:  rgb(239, 237, 237);
+    text-shadow: 2px 2px 9px black;
+    text-align: center;
+    transition: .3s linear;
+}
+.container-menu .info a:hover {
+letter-spacing:3px;
+}
+.container-menu .info span{
 text-align: center;
     font-size: 55px ;
     font-family: var(--font2);
@@ -472,7 +498,7 @@ text-shadow: 2px 2px 9px black;
 position: relative;
 }
 
-.container-user-menu .info span::after{
+.container-menu .info span::after{
     content: "";
     width: 80%;
     height: 2px;
@@ -482,7 +508,7 @@ position: relative;
     left: 10%;
     border-radius: 50px;
 }
-.container-user-menu .info span:last-child::after{
+.container-menu .info span:last-child::after{
     content: none;
 }
 

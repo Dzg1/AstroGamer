@@ -19,17 +19,15 @@
 	<body>
 		<nav class="navbar">
 			<div href="{{ path('app_home') }}" class="nav-title"><img src="{{ asset('images/navbar/AstroGamer.png')}}" alt="Logo astro gamer"></div>
-			{% if app.user %}
-				{{ dump(app.user) }}
-			{% endif %}
 			<div href="{{ path('app_login') }}" class="nav-login"><img src="{{ asset('images/navbar/login.png')}}" alt="Logo astro gamer">
-				{% if is_granted('ROLE_USER') %}
-					<!-- Si l'utilisateur a le rôle ROLE_USER -->
-					<a href="{{ path('app_login') }}">{{ app.user.username }}</a>
-				{% elseif is_granted('ROLE_ADMIN') %}
+				{% if is_granted('ROLE_ADMIN') %}
 					<!-- Si l'utilisateur a le rôle ROLE_ADMIN -->
-					<a href="{{ path('app_login') }}">{{ app.user.username }}
-						Admin</a>
+					<span class="account">
+						&#9885;
+						{{ app.user.username }}</span>
+				{% elseif is_granted('ROLE_USER') %}
+					<!-- Si l'utilisateur a le rôle ROLE_USER -->
+					<span class="account">{{ app.user.username }}</span>
 				{% else %}
 					<!-- Si l'utilisateur n'est pas authentifié -->
 					<a href="{{ path('app_login') }}">Login</a>
@@ -45,28 +43,30 @@
 				<div class="nav">
 					<ul>
 						<li class="nav-list active">
-							<a href="">
+							<div class="items">
 								<span class="icon"><img src="{{ asset('images/icon/home.png')}}" alt="icone d'acceuil"></span>
-								<span class="text">Acceuil</span>
-							</a>
+								<span class="text">
+									<a href="{{ path('app_home') }}">Acceuil</a>
+								</span>
+							</div>
 						</li>
 						<li class="nav-list">
-							<a href="">
+							<div class="items">
 								<span class="icon"><img src="{{ asset('images/icon/setting.png')}}" alt="icone de reglages"></span>
-								<span class="text">Règlage</span>
-							</a>
+								<span class="text" id="settings">Règlage</span>
+							</div>
 						</li>
 						<li class="nav-list">
-							<a href="">
+							<div class="items">
 								<span class="icon"><img src="{{ asset('images/icon/user.png')}}" alt="icone de compte"></span>
-								<span class="text">Compte</span>
-							</a>
+								<span class="text account">Compte</span>
+							</div>
 						</li>
 						<li class="nav-list">
-							<a href="">
+							<div class="items">
 								<span class="icon"><img src="{{ asset('images/icon/contact.png')}}" alt="icone de contact"></span>
 								<span class="text">Contact</span>
-							</a>
+							</div>
 						</li>
 						<div class="indicator"></div>
 					</ul>
@@ -91,22 +91,54 @@
 				</div>
 			</div>
 		</div>
-		<div class="user-menu">
-		<div class="close"><span>Fermer</span></div>
-			<div class="container-user-menu">
+		<div class="menu" id="settings-menu">
+			<div class="close">
+				<span>Fermer</span>
+			</div>
+			<div class="container-menu">
+				<h2>Règlages</h2>
+<p class="info">
+<span></span>
+</p>
+			</div>
+
+		</div>
+		<div class="menu" id="user-menu">
+			<div class="close">
+				<span>Fermer</span>
+			</div>
+			<div class="container-menu">
 				<h2>Mon Compte</h2>
 				<p class="info">
-					<span>Pseudo :
-						{{ app.user.username }}</span>
-					<span>Adresse mail :
-						{{ app.user.email }}</span>
-					<span>Score :
-						{{ app.user.score }}</span>
-					{% if app.user.roles[0] == 'ROLE_ADMIN' %}
-						<span>Role = Admin</span>
+					{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+						<span>
+							<b>
+								Pseudo :</b>
+							{{ app.user.username }}</span>
+						<span>
+							<b>Adresse mail :</b>
+							{{ app.user.email }}</span>
+						<span>
+							<b>Score :</b>
+							{{ app.user.score }}</span>
+						{% if app.user.roles[0] == 'ROLE_ADMIN' %}
+							<span>
+								<b>Role :</b>
+								Admin</span>
+						{% endif %}
+
+						<span>
+							<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						</span>
+
+					{% else %}
+						<span>Vous n'êtes pas connecter</span>
+
+						<a href="{{ path('app_login') }}">Connexion</a>
 					{% endif %}
 				</p>
+
 			</div>
 		</div>
 	</body>
-</html>
+</html></body></html>

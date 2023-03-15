@@ -27,3 +27,35 @@ function activeBubble(event){
 list.forEach((item) => {
     item.addEventListener('click',activeBubble);
 });
+
+
+/***close btn ***/
+
+let closeBtns = document.querySelectorAll('.close')
+
+closeBtns.forEach( function (closeBtn){
+    closeBtn.addEventListener('click',function(event) {
+        event.target.parentElement.style.display ="none";
+    });
+});
+
+/*** open nav settings ***/
+let settings = document.querySelector('#settings');
+let settingsMenu = document.querySelector('#settings-menu');
+
+    settings.addEventListener('click', () =>{
+        settingsMenu.style.display = "flex";
+    });
+    
+
+/*** open nav compte ***/
+let accountBtns = document.querySelectorAll('.account');
+let userMenu = document.querySelector('#user-menu');
+
+accountBtns.forEach(function (accountBtn){
+
+    accountBtn.addEventListener('click', () =>{
+        userMenu.style.display = "flex";
+    });
+    
+});
