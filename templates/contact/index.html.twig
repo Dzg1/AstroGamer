@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+	{{ parent() }}
+	{% block stylesheets %}
+		{{ parent() }}
+		{{ encore_entry_link_tags('app_contact') }}
+
+	{% endblock %}
+	{% block javascripts %}
+		{{ parent() }}
+		{{ encore_entry_script_tags('app_contact') }}
+
+	{% endblock %}
+{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+	<div class="container-contact">
+		<div class="card-contact">
+			<h1>Nous contacter</h1>
+
+				    {{ form_start(contactForm) }}
+                    {{ form_row(contactForm.content) }}		
+                    	<button type="submit" class="btn-neon"><span>Envoyer</span></button>
+
+			{{ form_end(contactForm) }}
+		</div>
+	</div>
+
+{% endblock %}

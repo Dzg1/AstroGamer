@@ -19,7 +19,7 @@ let list = document.querySelectorAll(".nav-list");
 
 function activeBubble(event){
     list.forEach(function (item) {
-        event.preventDefault();
+        // event.preventDefault();
         item.classList.remove('active');
         event.currentTarget.classList.add('active');
     })
