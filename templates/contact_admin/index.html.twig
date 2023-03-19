@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    {% block stylesheets %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('app_contact_admin') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('app_contact_admin') }}
+    {% endblock %}
+{% endblock %}
+
+{% block title %}Liste des messages{% endblock %}
+
+{% block body %}
+<h1>Liste des messages</h1>
+
+{% if mails|length > 0 %}
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Date de création</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for mail in mails %}
+        <tr>
+          <td>{{ mail.username }}</td>
+          <td>{{ mail.email }}</td>
+          <td>{{ mail.content }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>Aucun message n'a été trouvé.</p>
+{% endif %}
+
+{% if totalPages > 1 %}
+  <div class="pagination">
+    {% if currentPage > 1 %}
+      <a href="{{ path('app_contact_admin', {'page': currentPage - 1}) }}">Précédent</a>
+    {% endif %}
+
+    {% for page in 1..totalPages %}
+      {% if page == currentPage %}
+        <span class="current-page">{{ page }}</span>
+      {% else %}
+        <a href="{{ path('app_contact_admin', {'page': page}) }}">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if currentPage < totalPages %}
+      <a href="{{ path('app_contact_admin', {'page': currentPage + 1}) }}">Suivant</a>
+    {% endif %}
+  </div>
+{% endif %}
+{% endblock %}

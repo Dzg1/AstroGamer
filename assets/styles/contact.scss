@@ -24,3 +24,29 @@ h1 {
     color: rgb(239, 237, 237);
     text-shadow: 2px 2px 9px black;
 }
+.contact-ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-ul div {
+    display: flex;
+    justify-content: center;
+}
+.textarea {
+    width: 80%;
+    height: 250px;
+    border-radius: 20px;
+    resize: none; /* empêche la redimension */
+    font-family: var(--font3);
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .textarea::placeholder{
+    font-family: var(--font3);
+  }
+
+  .textarea:focus {
+    outline: none;
+  }

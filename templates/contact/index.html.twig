@@ -19,8 +19,8 @@
 		<div class="card-contact">
 			<h1>Nous contacter</h1>
 
-				    {{ form_start(contactForm) }}
-                    {{ form_row(contactForm.content) }}		
+				    {{ form_start(contactForm, {'attr': {'class': 'contact-ul'}}) }}
+                    {{ form_row(contactForm.content, {'label': false, 'attr': {'class': 'textarea', 'placeholder': 'Votre message ici ...'}}) }}		
                     	<button type="submit" class="btn-neon"><span>Envoyer</span></button>
 
 			{{ form_end(contactForm) }}
