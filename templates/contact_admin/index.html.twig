@@ -18,6 +18,7 @@
 {% block body %}
 <h1>Liste des messages</h1>
 
+<div class="container-contact-admin">
 {% if mails|length > 0 %}
   <table>
     <thead>
@@ -25,12 +26,11 @@
         <th>Nom</th>
         <th>Email</th>
         <th>Message</th>
-        <th>Date de création</th>
       </tr>
     </thead>
     <tbody>
       {% for mail in mails %}
-        <tr>
+        <tr  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.id }) }}';">
           <td>{{ mail.username }}</td>
           <td>{{ mail.email }}</td>
           <td>{{ mail.content }}</td>
@@ -38,7 +38,7 @@
       {% endfor %}
     </tbody>
   </table>
-{% else %}
+{% else %} 
   <p>Aucun message n'a été trouvé.</p>
 {% endif %}
 
@@ -61,4 +61,5 @@
     {% endif %}
   </div>
 {% endif %}
+</div>
 {% endblock %}
