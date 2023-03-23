@@ -33,7 +33,7 @@
         <tr  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.id }) }}';">
           <td>{{ mail.username }}</td>
           <td>{{ mail.email }}</td>
-          <td>{{ mail.content }}</td>
+          <td class="contents"><span>{{ mail.content }}</span> </td>
         </tr>
       {% endfor %}
     </tbody>

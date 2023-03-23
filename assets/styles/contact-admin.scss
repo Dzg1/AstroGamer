@@ -35,6 +35,13 @@ table th {
         align-items: center;
         margin-top: 20px;
     }
+.contents{
+    width: 500px;
+}
+    .contents span{
+        white-space: nowrap;
+        overflow: hidden;
+    }
     
     .pagination a,
     .pagination span {
