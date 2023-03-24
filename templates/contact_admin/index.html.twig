@@ -16,7 +16,7 @@
 {% block title %}Liste des messages{% endblock %}
 
 {% block body %}
-<h1>Liste des messages</h1>
+<h1>Vos messages</h1>
 
 <div class="container-contact-admin">
 {% if mails|length > 0 %}
@@ -30,10 +30,10 @@
     </thead>
     <tbody>
       {% for mail in mails %}
-        <tr  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.id }) }}';">
+        <tr class="line"  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.id }) }}';">
           <td>{{ mail.username }}</td>
           <td>{{ mail.email }}</td>
-          <td class="contents"><span>{{ mail.content }}</span> </td>
+          <td class="contents">{{ mail.content }} </td>
         </tr>
       {% endfor %}
     </tbody>

@@ -49,6 +49,15 @@ class ContactRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function findByUser($username): array
+    {
+        $query = $this->createQueryBuilder('m')
+        ->where('m.username = :username')
+        ->setParameter('username', $username)
+        ->getQuery();
+        return $query->getResult();
+    }
+
     //    /**
     //     * @return Contact[] Returns an array of Contact objects
     //     */

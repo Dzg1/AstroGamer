@@ -49,10 +49,11 @@ class ContactAdminController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_contact_admin_show', methods: ['GET'])]
-    public function show(ContactAdmin $contactAdmin): Response
+    public function findByUser($username): Response
     {
+      
         return $this->render('contact_admin/show.html.twig', [
-            'contact_admin' => $contactAdmin,
+            'username"=> $username
         ]);
     }
 
