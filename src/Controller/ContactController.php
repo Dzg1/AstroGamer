@@ -18,7 +18,7 @@ class ContactController extends AbstractController
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         // création d'une nouvelle instance de l'entité Contact
-        $contact = new Contact();
+        $contact = new Contact($entityManager);
 
         // Récupération de l'utilisateur connecté
         $user = $this->getUser();
@@ -27,6 +27,7 @@ class ContactController extends AbstractController
       
         $contact->setUsername($user->getUserIdentifier()); 
         $contact->setEmail($user->getEmail());
+        $contact->setUser($user->getId());
     
 
       // création du formulaire à partir de ContactType

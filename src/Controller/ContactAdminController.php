@@ -18,7 +18,7 @@ class ContactAdminController extends AbstractController
     #[Route('/{page<\d+>?1}', name: 'app_contact_admin')]
     public function index($page, ContactRepository $contactRepository): Response
     {
-        $mails_per_page = 5;
+        $mails_per_page = 10;
         $mails = $contactRepository-> findForPagination($page, $mails_per_page);
         $totalPages = ceil($contactRepository->count([]) / $mails_per_page);
     
@@ -48,12 +48,12 @@ class ContactAdminController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_contact_admin_show', methods: ['GET'])]
-    public function findByUser($username): Response
+    #[Route('/show/{id}', name: 'app_contact_admin_show', methods: ['GET'])]
+    public function show(ContactRepository $contactRepository,$id): Response
     {
-      
+        $mailsByUser= $contactRepository-> findByUser($id);
         return $this->render('contact_admin/show.html.twig', [
-            'username"=> $username
+            'mails_by_user' => $mailsByUser,
         ]);
     }
 

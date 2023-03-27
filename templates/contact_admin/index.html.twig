@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       {% for mail in mails %}
-        <tr class="line"  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.id }) }}';">
+        <tr class="line"  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.user.id }) }}';">
           <td>{{ mail.username }}</td>
           <td>{{ mail.email }}</td>
           <td class="contents">{{ mail.content }} </td>
