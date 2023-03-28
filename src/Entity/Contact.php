@@ -36,6 +36,9 @@ class Contact
      */
     private EntityManagerInterface $entityManager;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $sendAt = null;
+
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -104,6 +107,18 @@ class Contact
     public function setIsRead(bool $is_read): self
     {
         $this->is_read = $is_read;
+        return $this;
+    }
+
+    public function getSendAt(): ?\DateTimeInterface
+    {
+        return $this->sendAt;
+    }
+
+    public function setSendAt(\DateTimeInterface $sendAt): self
+    {
+        $this->sendAt = $sendAt;
+
         return $this;
     }
 

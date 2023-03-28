@@ -10,15 +10,15 @@
 }
 
 @font-face {
-    font-family: "poppins";
-    src: url(../../public/font/Poppins-Regular.ttf);
+    font-family: "nova";
+    src: url(../../public/font/ProximaNova.otf);
 }
 
 /***variables***/
 :root {
     --font1: 'title';
     --font2: 'subtitle';
-    --font3: 'Poppins', sans-serif;
+    --font3: 'nova', sans-serif;
     --color1: #15FBFC;
     --color2: #FE5416;
     --color3: #423E3E;

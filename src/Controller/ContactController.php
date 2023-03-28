@@ -28,6 +28,7 @@ class ContactController extends AbstractController
         $contact->setUsername($user->getUserIdentifier()); 
         $contact->setEmail($user->getEmail());
         $contact->setUser($user->getId());
+        $contact->setSendAt(new \DateTime());
     
 
       // création du formulaire à partir de ContactType

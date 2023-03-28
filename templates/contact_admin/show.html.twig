@@ -19,11 +19,12 @@
 	<h1>{{ mails_by_user[0].username }}</h1>
 
 
+<div id="copied"><span>Copié 👍🏾</span></div>
+		<p class=" container-adress" id="container-mail"><span id="email">{{ mails_by_user[0].email }}</span><span id="click-to-copy">✂️</span> </p> 
 
-		<p id="email">{{ mails_by_user[0].email }} <span id="click-to-copy">&#128203;</span> </p>
-
-		<div class="container-mail">
+		<div class="container-mail" id="container-mail>
 	{% for mail in mails_by_user %}
+	<p class="send-at">Le {{ mail.sendAt|date('d/m/Y à H:i') }}</p>
 			<p class="mail-bubble">
 				{{ mail.content }}
 			</p>
@@ -32,7 +33,8 @@
 		</div>
 
 
-	<a href="{{ path('app_contact_admin') }}">Boites de reception</a>
+	<a class="back" href="{{ path('app_contact_admin') }}">🔙</a>
 
 	{{ include('contact_admin/_delete_form.html.twig') }}
 {% endblock %}
+ 
