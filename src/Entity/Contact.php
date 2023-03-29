@@ -39,10 +39,7 @@ class Contact
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $sendAt = null;
 
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-        $this->entityManager = $entityManager;
-    }
+
 
 
 
@@ -121,6 +118,7 @@ class Contact
 
         return $this;
     }
+
 
 }
     
