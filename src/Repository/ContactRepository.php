@@ -44,11 +44,11 @@ class ContactRepository extends ServiceEntityRepository
         $query = $this->createQueryBuilder('c')
             ->setFirstResult($offset)
             ->setMaxResults($mailsPerPage)
+            ->orderBy('c.sendAt', 'DESC')
             ->getQuery();
-
+    
         return $query->getResult();
     }
-
     public function findByUser($id): array
     {
         $query = $this->createQueryBuilder('m')

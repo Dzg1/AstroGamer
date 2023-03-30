@@ -31,17 +31,16 @@ class Contact
     #[ORM\ManyToOne(inversedBy: 'contacts')]
     private ?User $user = null;
 
-        /**
-     * @var EntityManagerInterface
-     */
-    private EntityManagerInterface $entityManager;
+
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $sendAt = null;
 
 
 
-
+    public function __construct(private EntityManagerInterface $entityManager)
+    {
+    }
 
     public function getId(): ?int
     {

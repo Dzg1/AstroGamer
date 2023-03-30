@@ -20,7 +20,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
-font-family: var(--font3);
+    font-family: var(--font3);
 }
 
 table th,
@@ -31,34 +31,37 @@ table td {
 }
 
 table th {
-      text-align: center;
-      background-color: #f2f2f2;
-      font-weight: 600;
-    }
-    
-    .pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-    tbody{
-        width: 100%;
-    }
-    .line{
-        max-width: 100%;
-        cursor: pointer;
-        background: rgba(201, 201, 201, 0.25);
-        backdrop-filter: blur(2px);
-    }
-    
-    .line:hover{
-        box-shadow: 0px 0px 5px 0px #000000;
-    }
+    text-align: center;
+    background-color: #fe541679;
+    font-weight: 600;
+}
 
-    .unread{
-        background: rgba(201, 201, 201, 0.637);
-        font-weight: bolder;
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+tbody{
+    width: 100%;
+}
+.line{
+    max-width: 100%;
+    cursor: pointer;
+    background: rgba(201, 201, 201, 0.25);
+    backdrop-filter: blur(2px);
+    color: black;
+}
+
+.line:hover{
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.unread{
+    background: rgba(201, 201, 201, 0.637);
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px 2px 9px black;
     }
 .contents{
     overflow: hidden;
