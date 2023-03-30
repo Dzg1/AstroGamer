@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       {% for mail in mails %}
-        <tr class="line"  onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.user.id }) }}';">
+        <tr class="line {% if mail.getIsRead()  is same as(false) %}unread{% endif %}" data-message-id="{{ mail.id }}"   onclick="window.location='{{   path('app_contact_admin_show', {'id': mail.user.id }) }}';">
           <td>{{ mail.username }}</td>
           <td>{{ mail.email }}</td>
           <td class="contents">{{ mail.content }} </td>

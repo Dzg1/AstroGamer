@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+mark_message_as_read:
+    path: /contact/admin/message/{id}/mark-as-read
+    controller: App\Controller\MessageController::markAsRead
+    methods: [PUT]

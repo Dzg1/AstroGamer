@@ -10,6 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Contact;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 #[Route('/contact/admin')]
 class ContactAdminController extends AbstractController
@@ -56,6 +59,15 @@ class ContactAdminController extends AbstractController
             'mails_by_user' => $mailsByUser,
         ]);
     }
+    #[Route('/{id}/mark-as-read', name: 'app_contact_admin_mark_as_read', methods: ['POST'])]
+    public function markAsRead(Contact $contact, ContactRepository $contactRepository): JsonResponse
+    {
+        $contact->setIsRead(true);
+        $contactRepository->save($contact, true);
+
+        return new JsonResponse(['is_read' => $contact->getIsRead()]);
+    }
+
 
     #[Route('/{id}/edit', name: 'app_contact_admin_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ContactAdmin $contactAdmin, ContactAdminRepository $contactAdminRepository): Response
@@ -84,4 +96,6 @@ class ContactAdminController extends AbstractController
 
         return $this->redirectToRoute('app_contact_admin_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 }

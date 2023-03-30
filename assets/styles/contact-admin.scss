@@ -55,6 +55,11 @@ table th {
     .line:hover{
         box-shadow: 0px 0px 5px 0px #000000;
     }
+
+    .unread{
+        background: rgba(201, 201, 201, 0.637);
+        font-weight: bolder;
+    }
 .contents{
     overflow: hidden;
     white-space: nowrap;
