@@ -185,3 +185,22 @@ color: #000;
     opacity: 0;
   }
 }
+
+@media (max-width: 1000px){
+  h1{
+    font-size:100px;
+  }
+  .email{
+    font-size: 6rem ;
+  }
+  .container-mail {
+    height:1200px;
+    max-width: 90%;
+  }
+  .mail-bubble {
+    max-width: 80%;
+  }
+
+
+
+}

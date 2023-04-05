@@ -21,7 +21,7 @@ class ContactAdminController extends AbstractController
     #[Route('/{page<\d+>?1}', name: 'app_contact_admin')]
     public function index($page, ContactRepository $contactRepository): Response
     {
-        $mails_per_page = 10;
+        $mails_per_page = 12;
         $mails = $contactRepository-> findForPagination($page, $mails_per_page);
         $totalPages = ceil($contactRepository->count([]) / $mails_per_page);
     

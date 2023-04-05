@@ -61,3 +61,23 @@ h1 {
     font-size: 17px;
 }
 
+@media (max-width: 1000px){
+    .container-register {
+        height: 1500px;
+        width: 100%;
+    }
+    .card-register{
+      width:80% ;
+      backdrop-filter: none;
+    }
+
+    .card-register .ul .input{
+        height: 100px;
+        font-size: 36px;
+        border-radius: 20px;
+    }
+    .card-register p , .card-register p a {
+        font-size: 30px;
+    }
+  }
+

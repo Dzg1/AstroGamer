@@ -43,7 +43,6 @@ class ContactController extends AbstractController
             // enregistrement de l'entité Contact en base de données
             $entityManager->persist($contact);
             $entityManager->flush();
-
             // redirection vers la page de confirmation
             return $this->redirectToRoute('app_home');
         }

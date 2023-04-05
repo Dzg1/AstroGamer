@@ -1,13 +1,14 @@
-.container-contact-admin{
+.container-contact-admin {
     height: 600px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
+
 }
-h1{
+
+h1 {
     text-align: center;
     font-size: 50px;
     margin: 30px 0;
@@ -42,10 +43,12 @@ table th {
     align-items: center;
     margin-top: 20px;
 }
-tbody{
+
+tbody {
     width: 100%;
 }
-.line{
+
+.line {
     max-width: 100%;
     cursor: pointer;
     background: rgba(201, 201, 201, 0.25);
@@ -53,41 +56,53 @@ tbody{
     color: black;
 }
 
-.line:hover{
+.line:hover {
     box-shadow: 0px 0px 5px 0px #000000;
 }
 
-.unread{
+.unread {
     background: rgba(201, 201, 201, 0.637);
     font-weight: bolder;
     color: white;
     text-shadow: 2px 2px 9px black;
-    }
-.contents{
+}
+
+.contents {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 900px;
 }
 
-    
-    .pagination a,
-    .pagination span {
+
+.pagination a,
+.pagination span {
     padding: 6px 12px;
     border-radius: 4px;
     margin: 0 5px;
     text-decoration: none;
     background: rgb(201, 201, 201);
-backdrop-filter: blur( 8px );
+    backdrop-filter: blur(8px);
     border-radius: 10px;
     cursor: pointer;
-  }
-  
-  .pagination .current-page {
+}
+
+.pagination .current-page {
     padding: 6px 12px;
     border-radius: 4px;
     margin: 0 5px;
     color: #fff;
     background-color: var(--color2);
     border: 1px solid var(--color1)
-  }
+}
+
+@media (max-width: 1000px) {
+    .line {
+        height: 100px;
+        font-size: 2rem;
+    }
+
+    .contents {
+        max-width: 400px;
+    }
+}

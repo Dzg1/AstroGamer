@@ -339,6 +339,7 @@ backdrop-filter: blur( 8px );
       flex-direction: column;
       justify-content:center;
       align-items: center;
+      gap:20px;
     }
     .contain-nav{
         width: 90%;
@@ -459,6 +460,7 @@ height: 140px;
         width: 80px;
     }
 }
+
 
 /*** ***/
 
@@ -725,5 +727,16 @@ align-items: center;
         .container-menu .info a{
             font-size: 80px;
 
+        }
+    }
+    /*** responsive neon button ***/
+    @media (max-width: 1000px){
+        .btn-neon {
+            width: 500px;
+            height: 100px;
+            border-radius: 60px;
+        }
+        .btn-neon span {
+        font-size: 2rem;
         }
     }
