@@ -33,7 +33,7 @@ h1 {
 .container-mail {
   display: flex;
   flex-direction: column;
-  /*** NE FONCTIONNE PAS ***/
+/*** NE FONCTIONNE PAS ***/
   // justify-content: flex-end; 
   align-items: flex-start;
   height: 450px;
@@ -47,24 +47,20 @@ h1 {
   background-color: rgb(201, 201, 201);
   border-radius: 15px;
 }
-
-.container-mail::-webkit-scrollbar {
+.container-mail::-webkit-scrollbar{
   background-color: rgb(201, 201, 201);
   width: 30px;
   border-radius: 15px;
 }
-
 .container-mail::-webkit-scrollbar-thumb {
   background-color: var(--color2);
   border-radius: 15px;
-  border: 3px solid var(--color2);
+  border:3px solid var(--color2);
 }
-
-.send-at {
-  font-size: 1rem;
-  color: #000;
+.send-at{
+font-size: 1rem;
+color: #000;
 }
-
 .mail-bubble {
   position: relative;
   border-radius: 1.15rem;
@@ -102,17 +98,16 @@ h1 {
   width: 10px;
 }
 
-.back {
-  font-size: 50px;
-  position: absolute;
-  bottom: 20%;
+.back{
+  font-size : 50px;
+  position:absolute;
+  bottom:20%;
   left: 10%;
   transition: .4s linear;
   transform-origin: center;
 }
-
-.back:hover {
-  font-size: 60px;
+.back:hover{
+  font-size : 60px;
 }
 
 
@@ -145,13 +140,12 @@ h1 {
   font-weight: bolder;
   transition: .4s linear;
 }
-
-#copied span:hover {
+#copied span:hover{
   font-size: 2.5rem;
 }
 
 .is-copied {
-  animation: copied-animation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation:copied-animation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes copied-animation {
@@ -167,28 +161,24 @@ h1 {
     transform-origin: 50% 1400px;
     opacity: 1;
   }
-
   40% {
 
     transform: translateY(0) rotateX(0) scale(1);
     transform-origin: 50% 1400px;
     opacity: 1;
   }
-
   60% {
 
     transform: translateY(0) rotateX(0) scale(1);
     transform-origin: 50% 1400px;
     opacity: 1;
   }
-
   80% {
 
     transform: translateY(0) rotateX(0) scale(1);
     transform-origin: 50% 1400px;
     opacity: 1;
   }
-
   100% {
     transform: translateY(-600px) rotateX(-30deg) scale(0);
     transform-origin: 50% 100%;
@@ -196,28 +186,21 @@ h1 {
   }
 }
 
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 100px;
+@media (max-width: 1000px){
+  h1{
+    font-size:100px;
   }
-
-  .email {
-    font-size: 6rem;
+  .email{
+    font-size: 6rem ;
   }
-
   .container-mail {
-    height: 1200px;
+    height:1200px;
     max-width: 90%;
   }
-
   .mail-bubble {
     max-width: 100%;
+    min-width: 30%;
     overflow-wrap: break-word;
-    margin: 0;
-    display: inline-block;
-    white-space: normal;
-    text-overflow: clip;
-    overflow: visible;
   }
 
 
