@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HangmanController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+
+
+
+    <a href="{{path('app_word_new')}}">new</a>
+    {{dump(words)}}
+</div>
+{% endblock %}
