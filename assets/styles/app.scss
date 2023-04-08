@@ -728,9 +728,9 @@ align-items: center;
             font-size: 80px;
 
         }
-    }
+    
     /*** responsive neon button ***/
-    @media (max-width: 1000px){
+
         .btn-neon {
             width: 500px;
             height: 100px;
@@ -739,4 +739,33 @@ align-items: center;
         .btn-neon span {
         font-size: 2rem;
         }
+    }
+
+
+    /*** base card & container***/
+
+    .container-base{
+        height: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-base{
+        width: 30%;
+        background: rgba(201, 201, 201, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(2px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 30px;
+    }
+
+    .title-base {
+        font-size: 50px;
+        margin: 30px 0;
+        font-family: var(--font1);
+        color: rgb(239, 237, 237);
+        text-shadow: 2px 2px 9px black;
     }

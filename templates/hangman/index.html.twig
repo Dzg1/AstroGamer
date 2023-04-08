@@ -1,15 +1,36 @@
 {% extends 'base.html.twig' %}
+{% block head %}
+	{{ parent() }}
+	{% block stylesheets %}
+		{{ parent() }}
+		{{ encore_entry_link_tags('app_hangman') }}
 
-{% block title %}Hello HangmanController!{% endblock %}
+	{% endblock %}
+	{% block javascripts %}
+		{{ parent() }}
+		{{ encore_entry_script_tags('app_hangman') }}
+
+	{% endblock %}
+{% endblock %}
+{% block title %}Hangman{% endblock %}
 
 {% block body %}
 
-
-<div class="example-wrapper">
-
-
-
-    <a href="{{path('app_word_new')}}">new</a>
     {{dump(words)}}
+<div class="container-hangman-start container-base">
+<div class="card-hangman-start card-base">
+<h1 class="title-base">Le pendu</h1>
+<p class="rules-hangman">
+<h2>Bienvenue dans le jeu du pendu !</h2>
+Le but de ce jeu est de deviner un mot secret en proposant des lettres. À chaque proposition, si la lettre se trouve dans le mot secret, elle sera affichée à sa place dans le mot. Sinon, une partie du pendu sera dessinée.  <br>
+
+Si le pendu est dessiné en entier avant que vous ne deviniez le mot secret, vous avez perdu la partie. En revanche, si vous devinez le mot avant que le pendu ne soit dessiné, vous avez gagné la partie !  <br>
+
+Chaque lettre correctement devinée vous rapporte 2 points, tandis que chaque lettre incorrecte vous fait perdre 1 point. <br>
+
+Amusez-vous bien, et que la chance soit avec vous !
+</p>
+<button class="btn-neon"type="submit"><span>Lancer le jeu</span></button>
+</div>
 </div>
 {% endblock %}

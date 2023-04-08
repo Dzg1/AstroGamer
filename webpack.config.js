@@ -27,7 +27,8 @@ Encore
     .addEntry('app_contact', './assets/js/contact.js')
     .addEntry('app_contact_admin', './assets/js/contact-admin.js')
     .addEntry('app_contact_admin_show', './assets/js/contact-admin-show.js')
-
+    .addEntry('app_hangman', './assets/js/hangman.js')
+    
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
