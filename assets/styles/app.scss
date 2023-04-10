@@ -769,3 +769,23 @@ align-items: center;
         color: rgb(239, 237, 237);
         text-shadow: 2px 2px 9px black;
     }
+
+    @media (max-width: 1000px){
+        .container-base {
+            height: 1500px;
+            width: 100%;
+        }
+        .card-base{
+          width:80% ;
+          backdrop-filter: none;
+        }
+    
+        .card-base .ul .input{
+            height: 100px;
+            font-size: 36px;
+            border-radius: 20px;
+        }
+        .card-base p {
+            font-size: 30px;
+        }
+      }

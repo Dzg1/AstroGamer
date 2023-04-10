@@ -16,4 +16,11 @@ class HangmanController extends AbstractController
             'words' => $wordRepository->findAll(),
         ]);
     }
+    #[Route('/hangman/game', name: 'app_hangman_game')]
+    public function game(WordRepository $wordRepository): Response
+    {
+        return $this->render('hangman/game.html.twig', [
+            'words' => $wordRepository->findAll(),
+        ]);
+    }
 }

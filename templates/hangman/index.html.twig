@@ -12,25 +12,35 @@
 
 	{% endblock %}
 {% endblock %}
-{% block title %}Hangman{% endblock %}
+{% block title %}Hangman
+{% endblock %}
 
 {% block body %}
 
-    {{dump(words)}}
-<div class="container-hangman-start container-base">
-<div class="card-hangman-start card-base">
-<h1 class="title-base">Le pendu</h1>
-<p class="rules-hangman">
-<h2>Bienvenue dans le jeu du pendu !</h2>
-Le but de ce jeu est de deviner un mot secret en proposant des lettres. À chaque proposition, si la lettre se trouve dans le mot secret, elle sera affichée à sa place dans le mot. Sinon, une partie du pendu sera dessinée.  <br>
 
-Si le pendu est dessiné en entier avant que vous ne deviniez le mot secret, vous avez perdu la partie. En revanche, si vous devinez le mot avant que le pendu ne soit dessiné, vous avez gagné la partie !  <br>
+	<div class="container-hangman-start container-base">
+		<div class="card-hangman-start card-base">
+			<h1 class="title-base">Le pendu</h1>
+			<h2>Bienvenue dans le jeu du pendu !</h2>
+			<p class="rules-hangman">
+				<span>
+					Le but de ce jeu est de deviner un mot secret en proposant des lettres. À chaque proposition, si la lettre se trouve dans le mot secret, elle sera affichée à sa place dans le mot. Sinon, une partie du pendu sera dessinée.
+					<br>
 
-Chaque lettre correctement devinée vous rapporte 2 points, tandis que chaque lettre incorrecte vous fait perdre 1 point. <br>
+					Si le pendu est dessiné en entier avant que vous ne deviniez le mot secret, vous avez perdu la partie. En revanche, si vous devinez le mot avant que le pendu ne soit dessiné, vous avez gagné la partie !
+					<br>
 
-Amusez-vous bien, et que la chance soit avec vous !
-</p>
-<button class="btn-neon"type="submit"><span>Lancer le jeu</span></button>
-</div>
-</div>
+					Chaque lettre correctement devinée vous rapporte 2 points, tandis que chaque lettre incorrecte vous fait perdre 1 point.
+					<br>
+
+					Amusez-vous bien, et que la chance soit avec vous !
+				</span>
+			</p>
+			<a class="link-btn" href="{{path('app_hangman_game')}}">
+			<button class="btn-neon" >
+				<span>Lancer le jeu</span>
+			</button>
+			</a>
+		</div>
+	</div>
 {% endblock %}
