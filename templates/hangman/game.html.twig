@@ -4,14 +4,13 @@
 	{% block stylesheets %}
 		{{ parent() }}
 		{{ encore_entry_link_tags('app_hangman_game') }}
-
 	{% endblock %}
 	{% block javascripts %}
 		{{ parent() }}
 		{{ encore_entry_script_tags('app_hangman_game') }}
-
 	{% endblock %}
 {% endblock %}
+
 {% block title %}Hangman game
 {% endblock %}
 
@@ -19,33 +18,32 @@
 
 
 	<div class="container-hangman-game container-base">
-		<div class="card-hangman-game card-base">
-			<h1 class="title-base">Le pendu</h1>
-        <div class="contain1">
-            <div id="game">
-                <div class="center-main">
-                    <h2> Devinez le mot suivant </h2>
-                    <span id="word-to-find"></span>
-                    <p id=>Il vous reste <span id="pv">9</span> pv</p>
-                    <p class="tofind"><span id="find"></span> / <span id="tofind"></span></p>
-                </div>
-            </div>
-            <div class="final">
-
-                <div id="victory">
-                    <span>Bravo vous avez trouvé le mot</span>
-                </div>
-                <div id="game-over">
-                    <span>Game over le mot étais : <span id="gOWord"></span></span>
-
-                </div>
-                <input type="button" value="Rejouer" id="btn-reload">
-            </div>
-        </div>
-            <div class="img">
-                <img id="img" src="./assets/pendu" alt="">
-                <span id="used"> </span>
-        </div>
+		<div>
+			<div id="game">
+				<div id="game-text">
+					<div class="word-to-find">
+						<span id="word-to-find"></span>
+					</div>
+					<div class="keybord">
+						<span id="key-contain"></span>
+					</div>
+				</div>
+				<div id="result">
+					<div id="game-over">
+						<h2>Perdu !</h2>
+						<p>Le mot à trouver était :
+							<span id="gOWord"></span>
+						</p>
+					</div>
+					<div id="victory">
+						<h2>Gagné !</h2>
+					</div>
+					<button id="btn-reload">Rejouer</button>
+				</div>
+				<div id="game-image">
+					<img src="{{ asset('images/hangman/hang0.png') }}" id="img">
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}

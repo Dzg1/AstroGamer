@@ -1,73 +1,28 @@
 .card-hangman-game{
 width: 90%;
-}
-#victory{
-    display: none;
-}
-#game-over{
-    display: none;
-}
-#btn-reload{
-    margin-top: 80px;
-    display: none;
-    padding: 20px;
-    background: #008080;
-    border: 2px rgb(0, 77, 77) solid;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.img{
-    min-width: 400px;
-    height:500px;
-    border: 30px teal solid;
-    padding: 10px;
-    border-radius: 70px;
-    padding-bottom: 60px;
-    position: relative;
-}
-#used {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50% );font-size: 3rem;
-}
-.contain{
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 100px 0 100px;
-}
-.final{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-height:100%;
 
 }
-h1{
-  text-align: center;
-  color: white;
+
+#victory, #game-over, #btn-reload{
+    display: none;
 }
-.title{
-    background: teal;
-    height:70px;
+
+#game{
     display: flex;
-    justify-content: center;
-    align-items: center;
+align-items: center;
+gap: 20px;
 }
-.center-main{
-    display:flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
+
+#game-text {
     text-align: center;
-height: 500px;
-}
-#word-to-find{
-    font-size: 7rem;
-}
-.tofind{
-    font-size: 3rem;
 }
 
+#game-image {
+    border: 1px solid var(--color2);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+#key-contain{
+    display: flex;
+}

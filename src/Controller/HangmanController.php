@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,8 +20,49 @@ class HangmanController extends AbstractController
     #[Route('/hangman/game', name: 'app_hangman_game')]
     public function game(WordRepository $wordRepository): Response
     {
+        // Récupérer tous les mots de la base de données
+        $words = $wordRepository->findAll();
+        
+        // Générer un nombre aléatoire
+        $randomIndex = rand(0, count($words) - 1);
+        
+        // Récupérer le mot aléatoire
+        $word = $words[$randomIndex];
+
+
+    
+        // Passer les variables à la vue
         return $this->render('hangman/game.html.twig', [
-            'words' => $wordRepository->findAll(),
+            'word' => $word,
+
+
         ]);
     }
+    #[Route('/hangman/game/word', name: 'app_hangman_game_word')]
+    public function word(WordRepository $wordRepository): Response
+    {
+        // Récupérer tous les mots de la base de données
+        $words = $wordRepository->findAll();
+        
+        // Générer un nombre aléatoire
+        $randomIndex = rand(0, count($words) - 1);
+        
+        // Récupérer le mot aléatoire
+        $word = $words[$randomIndex];
+
+
+    
+    // Créer une réponse JSON avec le mot aléatoire 
+    $response = new JsonResponse(['word' => $word->getword()]);
+
+    // Ajouter un en-tête pour spécifier que la réponse est au format JSON
+    $response->headers->set('Content-Type', 'application/json');
+
+    // Retourner la réponse
+    return $response;
 }
+
+
+    
+    }
+
