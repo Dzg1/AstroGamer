@@ -6,6 +6,11 @@ width: 90%;
 #victory, #game-over, #btn-reload{
     display: none;
 }
+ #victory h2 ,#game-over h2 {
+    color: white;
+    font-family:var(--font1);
+    font-size: 2rem;
+ }
 
 #game{
     display: flex;
@@ -15,6 +20,18 @@ gap: 20px;
 
 #game-text {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+}
+#result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+    text-align: center;
 }
 
 #game-image {
@@ -22,7 +39,23 @@ gap: 20px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+#word-to-find{
+    font-size: 6rem;
+    letter-spacing: 10px;
+    font-family: var(--font2);
+}
 
-#key-contain{
+#key-contain .row{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#key-contain .key{
+border:1px solid black;
+display: flex;justify-content: center;align-items: center;
+height: 40px;
+width: 40px;
+margin: 5px;
+border-radius:5px;
 }
