@@ -14,6 +14,8 @@ let game = document.querySelector("#game");
 let gameText = document.querySelector("#game-text");
 let used = document.querySelector("#used");
 let keyContain = document.querySelector("#key-contain");
+let scoreVictory = document.querySelector('#score-victory');
+let wordVictory = document.querySelector('#word-victory');
 
 let tableToFind = [];
 let keyTested = undefined;
@@ -23,6 +25,7 @@ let win = 0;
 let itsALetter = false;
 let imgNbr = 0;
 let keys = [];
+let score = 0;
 let azerty = [
   "a",
   "z",
@@ -51,7 +54,6 @@ let azerty = [
   "b",
   "n",
 ];
-
 // ajax
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "/hangman/game/word", true);
@@ -60,7 +62,6 @@ xhr.onload = function () {
     let response = JSON.parse(xhr.responseText);
     let word = response.word;
     let tableWord = word.split("");
-    console.log(response.word);
 
     function testingLetter(letterToTest, word) {
       let count = 0;
@@ -69,16 +70,19 @@ xhr.onload = function () {
           count++;
           tableToFind[i] = word[i];
           win++;
+          score = score + 2;
         }
       }
       if (count < 1 && imgNbr < 9) {
         error = true;
         pv--;
         imgNbr++;
+        score--;
       }
     }
 
     function gameLauncher() {
+      console.log(score);
       let row1 = document.createElement("div");
       row1.classList.add("row");
       row1.classList.add("row-1");
@@ -99,13 +103,12 @@ xhr.onload = function () {
           row1.appendChild(key);
         } else if (azerty.indexOf(letter) < 19) {
           row2.appendChild(key);
-        } else {
+        } else { 
           row3.appendChild(key);
         }
 
         key.addEventListener("click", (event) => {
           key.style.background = "grey";
-          console.log(letter + " est cliqué");
           keyTested = letter;
           azerty.forEach((letter) => {
             if (letter === keyTested) {
@@ -118,34 +121,40 @@ xhr.onload = function () {
             img.src = `../images/hangman/hang${imgNbr}.png`;
           }
           if (pv === 0) {
-            gameOver.style.display = "block";
+            gameOver.style.display = "flex";
             btnReload.style.display = "block";
             gOWord.innerHTML = word;
             gameText.style.display = "none";
           }
           if (win === word.length) {
-            victory.style.display = "block";
+            scoreVictory.innerText = score;
+            wordVictory.innerText = word;
+            victory.style.display = "flex";
             btnReload.style.display = "block";
             gameText.style.display = "none";
           }
+          console.log("score = "+ score);
         });
       });
       keyContain.appendChild(row1);
       keyContain.appendChild(row2);
       keyContain.appendChild(row3);
-
+      
       for (let i = 0; i < tableWord.length; i++) {
-        tableToFind[i] = "_";
-        wordToFind.innerHTML = tableToFind.join(" ");
+        if (tableWord[i] === "-" || tableWord[i] === "'") {
+          tableToFind[i] = tableWord[i];
+          win++;
+        } else {
+          tableToFind[i] = "_";
+          wordToFind.innerHTML = tableToFind.join(" ");
+        }
       }
     }
-    console.log(keys);
     gameLauncher();
+   console.log(word);
     window.addEventListener("keydown", (event) => {
       keys.forEach((key) => {
-
         if (key.textContent === event.key) {
-
           key.style.background = "grey";
           keyTested = event.key;
           azerty.forEach((letter) => {
@@ -159,13 +168,15 @@ xhr.onload = function () {
             img.src = `../images/hangman/hang${imgNbr}.png`;
           }
           if (pv === 0) {
-            gameOver.style.display = "block";
+            gameOver.style.display = "flex";
             btnReload.style.display = "block";
             gOWord.innerHTML = word;
             gameText.style.display = "none";
           }
           if (win === word.length) {
-            victory.style.display = "block";
+            wordVictory.innerText = word;
+            scoreVictory.innerText = score;
+            victory.style.display = "flex";
             btnReload.style.display = "block";
             gameText.style.display = "none";
           }
@@ -181,3 +192,6 @@ xhr.onload = function () {
   }
 };
 xhr.send();
+
+
+

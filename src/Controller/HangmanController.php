@@ -61,8 +61,10 @@ class HangmanController extends AbstractController
     // Retourner la réponse
     return $response;
 }
+#[Route('/hangman/game/updateScore', name: 'app_hangman_game_updateScore')]
+public function markAsRead(User $user, UserRepository $userRepository): JsonResponse{
 
 
-    
+    return new JsonResponse('Score updated successfully');
     }
 
