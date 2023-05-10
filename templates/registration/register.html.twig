@@ -26,6 +26,7 @@
 			{{ form_row(registrationForm.email, {'label': false, 'attr': {'class': 'input', 'placeholder': 'Email'}}) }}
 			{{ form_row(registrationForm.username, {'label': false, 'attr': {'class': 'input', 'placeholder': 'Pseudo'}}) }}
 			{{ form_row(registrationForm.plainPassword, {'label': false, 'attr': {'class': 'input', 'placeholder': 'mot de passe'}}) }}
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			<button type="submit" class="btn-neon"><span>Créer un compte</span></button>
 			<p>Vous avez déjà un compte?
 				<a href="{{ path('app_login') }}">Connectez-vous</a>
