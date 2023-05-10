@@ -98,7 +98,7 @@ xhr.onload = function () {
         keys.push(key);
         key.setAttribute("id", letter);
         key.classList.add("key");
-        key.innerHTML = letter;
+        key.textContent = letter;
         if (azerty.indexOf(letter) < 10) {
           row1.appendChild(key);
         } else if (azerty.indexOf(letter) < 19) {
@@ -117,18 +117,18 @@ xhr.onload = function () {
           });
           if (itsALetter === true) {
             testingLetter(keyTested, tableWord);
-            wordToFind.innerHTML = tableToFind.join(" ");
+            wordToFind.textContent = tableToFind.join(" ");
             img.src = `../images/hangman/hang${imgNbr}.png`;
           }
           if (pv === 0) {
             gameOver.style.display = "flex";
             btnReload.style.display = "block";
-            gOWord.innerHTML = word;
+            gOWord.textContent = word;
             gameText.style.display = "none";
           }
           if (win === word.length) {
-            scoreVictory.innerText = score;
-            wordVictory.innerText = word;
+            scoreVictory.textContent = score;
+            wordVictory.textContent = word;
             victory.style.display = "flex";
             btnReload.style.display = "block";
             gameText.style.display = "none";
@@ -146,7 +146,7 @@ xhr.onload = function () {
           win++;
         } else {
           tableToFind[i] = "_";
-          wordToFind.innerHTML = tableToFind.join(" ");
+          wordToFind.textContent = tableToFind.join(" ");
         }
       }
     }
@@ -164,18 +164,18 @@ xhr.onload = function () {
           });
           if (itsALetter === true) {
             testingLetter(keyTested, tableWord);
-            wordToFind.innerHTML = tableToFind.join(" ");
+            wordToFind.textContent = tableToFind.join(" ");
             img.src = `../images/hangman/hang${imgNbr}.png`;
           }
           if (pv === 0) {
             gameOver.style.display = "flex";
             btnReload.style.display = "block";
-            gOWord.innerHTML = word;
+            gOWord.textContent = word;
             gameText.style.display = "none";
           }
           if (win === word.length) {
-            wordVictory.innerText = word;
-            scoreVictory.innerText = score;
+            wordVictory.textContent = word;
+            scoreVictory.textContent n = score;
             victory.style.display = "flex";
             btnReload.style.display = "block";
             gameText.style.display = "none";
@@ -192,6 +192,21 @@ xhr.onload = function () {
   }
 };
 xhr.send();
+
+btnReload.addEventListener("click", () => {
+  console.log("Button clicked!");
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', '/hangman/game/updateScore', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    } else {
+      console.log('Error updating score');
+    }
+  };
+  xhr.send('score=' + score);
+});
 
 
 

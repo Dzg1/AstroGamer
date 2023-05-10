@@ -20,7 +20,11 @@
 <div class="container-home-left">
 <ul>
 <li> <a href="">QUIZ</a> </li>
+{% if is_granted('ROLE_USER') %}
 <li><a href="{{ path('app_hangman')}}">PENDU</a></li>
+{% else %}
+  <li><a href="{{ path('app_login')}}">PENDU</a></li>
+{% endif %}
 <li><a href="">RPG</a></li>
 </ul>
 </div>

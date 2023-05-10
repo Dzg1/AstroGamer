@@ -2,11 +2,16 @@
 
 namespace App\Controller;
 
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use App\Repository\WordRepository;
+use App\Entity\User;
 
 class HangmanController extends AbstractController
 {
@@ -62,9 +67,15 @@ class HangmanController extends AbstractController
     return $response;
 }
 #[Route('/hangman/game/updateScore', name: 'app_hangman_game_updateScore')]
-public function markAsRead(User $user, UserRepository $userRepository): JsonResponse{
-
+public function updateScore(EntityManagerInterface $em, Request $request, TokenStorageInterface $tokenStorage): JsonResponse{
+    $user = $tokenStorage->getToken()->getUser();
+    $currentScore =   $user->getScore();
+    $newScore = $request->get('score');
+    $totalScore = $currentScore + $newScore;
+    $user->setScore($totalScore);
+    $em->persist($user);
+    $em->flush();
 
     return new JsonResponse('Score updated successfully');
     }
-
+}

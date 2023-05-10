@@ -59,6 +59,7 @@ class ContactAdminController extends AbstractController
             'mails_by_user' => $mailsByUser,
         ]);
     }
+    
     #[Route('/{id}/mark-as-read', name: 'app_contact_admin_mark_as_read', methods: ['POST'])]
     public function markAsRead(Contact $contact, ContactRepository $contactRepository): JsonResponse
     {
